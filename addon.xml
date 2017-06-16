@@ -19,8 +19,8 @@
 		<platform>all</platform>
         <source>https://github.com/lperezperez/repository.luigitech.git</source>
         <assets>
-            <icon />
-            <fanart />
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
 	</extension>
 </addon>
