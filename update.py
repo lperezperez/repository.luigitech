@@ -168,7 +168,7 @@ def fetch(addonPath, datadir, result):
                         for item in os.listdir(themesFolder):
                             folder = os.path.join(themesFolder, item)
                             if os.path.isdir(folder):
-                                subprocess.Popen(("TexturePacker.exe", "-dupecheck -input %s -output %s" % (folder, os.path.join(mediaFolder, "%s.xbt" % item)))).wait()
+                                subprocess.Popen(("TexturePacker.exe", "-dupecheck -input \"%s\" -output \"%s\"" % (folder, os.path.join(mediaFolder, "%s.xbt" % item)))).wait()
                         # Remove themesFolder.
                         shutil.rmtree(themesFolder)
                 addonRepositoryFolder = os.path.join(datadir, addonId)
@@ -297,16 +297,17 @@ if __name__ == "__main__":
         try:
             addonPublisherResult = next(iter(addonPublisher.result))
             if addonPublisherResult.exception is not None:
-                print(getErrorGettingAddon(addonPublisher.thread.name) + '\n' + addonPublisherResult.exception)
+                print(getErrorGettingAddon(addonPublisher.thread.name))
+                print(addonPublisherResult.exception)
             addonsXml.append(addonPublisherResult.xml)
         except StopIteration:
             print(getErrorGettingAddon(addonPublisher.thread.name))
-    # Write addons.xml file.
+    # Write addons.xml.gz file.
     addonsXmlPath = os.path.join(args.datadir, Addons + XmlExtension + Dot + "gz")
     # Write GZip file
     with io.BytesIO() as xmlFile:
         xml.etree.ElementTree.ElementTree(addonsXml).write(xmlFile, encoding="UTF-8", xml_declaration=True)
         with gzip.open(addonsXmlPath, "wb") as gzipFile:
             gzipFile.write(xmlFile.getvalue())
-    # Write addons.xml.md5 file.
+    # Write addons.xml.gz.md5 file.
     writeChecksumFile(addonsXmlPath)
