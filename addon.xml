@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.luigitech" version="0.0.0" name="Luigitech Add-on repository" provider-name="Luigitech">
+<addon id="repository.luigitech" version="1.0.0" name="Luigitech Add-on repository" provider-name="Luigitech">
 	<extension point="xbmc.addon.repository">
-        <info>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.gz</info>
+		<info>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.gz</info>
 		<checksum>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.md5.gz</checksum>
 		<datadir zip="true">https://github.com/lperezperez/repository.luigitech/raw/master</datadir>
         <hashes>true</hashes>
