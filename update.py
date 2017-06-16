@@ -38,7 +38,7 @@ Based on Chad Parry script:
 """
 
 __license__ = "GNU GENERAL PUBLIC LICENSE. Version 2, June 1991"
-__version__ = "0.0.1"
+__version__ = "1.0.0"
 
 import argparse
 import collections
