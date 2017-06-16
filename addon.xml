@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.luigitech" version="0.0.0" name="Luigitech Add-on repository" provider-name="Luigitech">
+<addon id="repository.luigitech" version="1.0.0" name="Luigitech Add-on repository" provider-name="Luigitech">
 	<extension point="xbmc.addon.repository">
-        <info>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.gz</info>
+		<info>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.gz</info>
 		<checksum>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.md5.gz</checksum>
 		<datadir zip="true">https://github.com/lperezperez/repository.luigitech/raw/master</datadir>
         <hashes>true</hashes>
@@ -13,14 +13,17 @@
         <description lang="ca">Repositori de Kodi d'add-ons modificades, no oficials o versions nightly.</description>
 		<description lang="en">Kodi repository for modded, unofficial or nightly add-ons.</description>
 		<description lang="es">Repositorio de Kodi de addons modificadas, no oficiales o versiones nightly.</description>
-        <news />
+        <news>
+            1.0.0
+            - Initial Release.
+        </news>
         <language>ca en es</language>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 		<platform>all</platform>
         <source>https://github.com/lperezperez/repository.luigitech.git</source>
         <assets>
-            <icon />
-            <fanart />
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
 	</extension>
 </addon>
