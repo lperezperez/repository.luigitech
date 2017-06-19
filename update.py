@@ -69,26 +69,13 @@ TextFileType = "txt"
 ZipFileType = "zip"
 
 
-def isUrl(path):
-    return bool(re.match("[A-Za-z0-9+.-]+://.", path))
-
-
-def writeChecksumFile(filePath):
-    checksum = hashlib.md5()
-    with open(filePath, "rb") as file:
-        for chunk in iter(lambda: file.read(4096), b""):
-            checksum.update(chunk)
-    with open(filePath + Dot + "md5", 'w') as md5File:
-        md5File.write(checksum.hexdigest())
-
-
 def createFolder(path):
     if not os.path.isdir(path):
         os.mkdir(path)
 
 
-def getNameVersionFileName(path, name, version, fileType):
-    return os.path.join(path, "%s-%s%s" % (name, version, Dot + fileType))
+def isUrl(path):
+    return bool(re.match("[A-Za-z0-9+.-]+://.", path))
 
 
 def getAddonInfo(addonXmlPath):
@@ -107,6 +94,10 @@ def getAddonInfo(addonXmlPath):
     return (addonId, addonVersion)
 
 
+def getNameVersionFileName(path, name, version, fileType):
+    return os.path.join(path, "%s-%s%s" % (name, version, Dot + fileType))
+
+
 def onRmTreeError(func, path, exc_info):
     """
     Error handler for ``shutil.rmtree``.
@@ -116,7 +107,7 @@ def onRmTreeError(func, path, exc_info):
 
     If the error is for another reason it re-raises the error.
 
-    Usage : ``shutil.rmtree(path, onerror=onerror)``
+    Usage : ``shutil.rmtree(path, onerror=onRmTreeError)``
     """
     # path is read-only...
     if not os.access(path, os.W_OK):
@@ -125,6 +116,15 @@ def onRmTreeError(func, path, exc_info):
         func(path)
     else:
         raise
+
+
+def writeChecksumFile(filePath):
+    checksum = hashlib.md5()
+    with open(filePath, "rb") as file:
+        for chunk in iter(lambda: file.read(4096), b""):
+            checksum.update(chunk)
+    with open(filePath + Dot + "md5", 'w') as md5File:
+        md5File.write(checksum.hexdigest())
 
 
 def fetch(addonPath, datadir, result):
@@ -253,10 +253,6 @@ if __name__ == "__main__":
     # Set current path as the default add-ons data folder.
     currentFolder = os.path.dirname(os.path.abspath(__file__))
     parser.add_argument("-d", "--datadir", default=currentFolder, help="path to place the add-ons\n  default: %s" % currentFolder)
-    # Load Markdown default file if exist.
-    addonsListFilePath = os.path.join(currentFolder, "README" + Dot + "md")
-    if not os.path.isfile(addonsListFilePath):
-        addonsListFilePath = None
     parser.add_argument("-v", "--version", action="version", version="%(prog)s " + __version__)
     args = parser.parse_args()
     # If none AddonPath is provided, get currentFolder (repository add-on path)
