@@ -1,10 +1,10 @@
-# Luigitech Kodi Repository 1.0.0
+# Luigitech Kodi Repository 1.0.1
 Kodi repository for unofficial/modded/BETA addons.
 ### Add-ons
 - [plugin.video.pelisalacarta 4.2.0](https://github.com/lperezperez/pelisalacarta)/python/main-classic develop
 - [skin.arctic.zephyr.plus 2.3.9](https://github.com/lperezperez/skin.arctic.zephyr.plus)
 ### Installation
-Download the [repository zip file](https://github.com/lperezperez/repository.luigitech/raw/master/repository.luigitech/repository.luigitech-1.0.0.zip) and install through the Kodi repository installer plugin.
+Download the [repository zip file](https://github.com/lperezperez/repository.luigitech/raw/master/repository.luigitech/repository.luigitech-1.0.1.zip) and install through the Kodi repository installer plugin.
 ### Update
 To modify the add-ons included or make your own repository, follow these steps:
 1. Clone this Git repository.
@@ -27,4 +27,4 @@ To modify the add-ons included or make your own repository, follow these steps:
     $ python update.py
     ```
 4. Publish changes to a remote Git repository.
-5. Download the [repository zip file](https://github.com/lperezperez/repository.luigitech/raw/master/repository.luigitech/repository.luigitech-1.0.0.zip) and install through the Kodi repository installer plugin.
+5. Download the [repository zip file](https://github.com/lperezperez/repository.luigitech/raw/master/repository.luigitech/repository.luigitech-1.0.1.zip) and install through the Kodi repository installer plugin.

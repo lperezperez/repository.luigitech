@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.luigitech" version="1.0.0" name="Luigitech Add-on repository" provider-name="Luigitech">
+<addon id="repository.luigitech" version="1.0.1" name="Luigitech Add-on repository" provider-name="Luigitech">
 	<extension point="xbmc.addon.repository">
 		<info>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.gz</info>
-		<checksum>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.md5.gz</checksum>
+		<checksum>https://github.com/lperezperez/repository.luigitech/raw/master/addons.xml.gz.md5</checksum>
 		<datadir zip="true">https://github.com/lperezperez/repository.luigitech/raw/master</datadir>
         <hashes>true</hashes>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-        <summary lang="ca">Repositori de Kodi per add-ons modificades, no oficials o versions nightly.</summary>
-		<summary lang="en">Kodi repository for modded, unofficial or nightly add-on versions.</summary>
-        <summary lang="es">Repositorio de Kodi para add-ons modificadas, no oficiales o versiones nightly.</summary>
-        <description lang="ca">Repositori de Kodi per add-ons modificades, no oficials o versions nightly.</description>
-		<description lang="en">Kodi repository for modded, unofficial or nightly add-on versions.</description>
-		<description lang="es">Repositorio de Kodi para addons modificadas, no oficiales o versiones nightly.</description>
-        <news />
+        <summary lang="ca">Repositori de Kodi d'add-ons modificades, no oficials o versions nightly.</summary>
+		<summary lang="en">Kodi repository for modded, unofficial or nightly.</summary>
+        <summary lang="es">Repositorio de Kodi de add-ons modificadas, no oficiales o versiones nightly.</summary>
+        <description lang="ca">Repositori de Kodi d'add-ons modificades, no oficials o versions nightly.</description>
+		<description lang="en">Kodi repository for modded, unofficial or nightly add-ons.</description>
+		<description lang="es">Repositorio de Kodi de addons modificadas, no oficiales o versiones nightly.</description>
+        <news>
+            1.0.1
+            - Fixed checksum URL.
+            1.0.0
+            - Initial Release.
+        </news>
         <language>ca en es</language>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 		<platform>all</platform>
